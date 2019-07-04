@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object Tracker Test</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .box:hover{
+            background-color: rgba(0, 0, 0, .1);
+            transition: 500ms;
+            cursor: none;
+        }
+        .drag:hover{
+            background-color: rgba(0, 0, 0, 0);
+            transition: 0ms;
+            cursor: auto;
+            z-index: 10;
+        }
+        #rotateCursor{
+            position: fixed;
+            background-size: contain;
+            width: 35px;
+            height: 35px;
+            background-position: center;
+            background-image: url(rotate.svg);
+            /* background-color: rgba(0, 0, 0, .1); */
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <button style="position: absolute; top: 2%; left:2%;" onclick="createNewObject()">Create New Object</button>
+    <div id="app"></div>
+    <button style="position: absolute; top:2%; right:2%;" onclick="toggleLogging()">Toggle Logging</button>
+    <button style="position: absolute; top:2%; right:16%;" onclick="toggleMassEdit()">Toggle Mass Edit</button>
+</body>
+<script src="app.js"></script>
+</html>
